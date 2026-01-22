@@ -1,0 +1,85 @@
+{
+  "ranges": [
+    {
+      "name": "优秀",
+      "minScore": 90,
+      "maxScore": 100,
+      "rewards": {
+        "freeTime": {
+          "name": "每日自由支配时间",
+          "value": 20,
+          "unit": "分钟"
+        },
+        "spendingLimit": {
+          "name": "每日手表消费额度",
+          "value": 20,
+          "unit": "元"
+        },
+        "weeklyAllowance": {
+          "name": "每周获得零花钱",
+          "value": 15,
+          "unit": "元"
+        },
+        "weekendGame": {
+          "name": "周末游戏时间",
+          "value": true,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "name": "良好",
+      "minScore": 60,
+      "maxScore": 89,
+      "rewards": {
+        "freeTime": {
+          "name": "每日自由支配时间",
+          "value": 15,
+          "unit": "分钟"
+        },
+        "spendingLimit": {
+          "name": "每日手表消费额度",
+          "value": 10,
+          "unit": "元"
+        },
+        "weeklyAllowance": {
+          "name": "每周获得零花钱",
+          "value": 10,
+          "unit": "元"
+        },
+        "weekendGame": {
+          "name": "周末游戏时间",
+          "value": false,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "name": "待提高",
+      "minScore": 0,
+      "maxScore": 59,
+      "rewards": {
+        "freeTime": {
+          "name": "每日自由支配时间",
+          "value": 0,
+          "unit": "分钟"
+        },
+        "spendingLimit": {
+          "name": "每日手表消费额度",
+          "value": 2,
+          "unit": "元"
+        },
+        "weeklyAllowance": {
+          "name": "每周获得零花钱",
+          "value": 5,
+          "unit": "元"
+        },
+        "weekendGame": {
+          "name": "周末游戏时间",
+          "value": false,
+          "unit": ""
+        }
+      }
+    }
+  ]
+}

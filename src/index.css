@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -100%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Lottie 动画优化 - 提升渲染质量 */
+.lottie-container {
+  /* 抗锯齿 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* 优化渲染 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* 硬件加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  
+  /* 确保清晰度 */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Canvas 元素优化 */
+.lottie-container canvas {
+  /* 抗锯齿 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* 硬件加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* SVG 元素优化（备用） */
+.lottie-container svg {
+  /* 抗锯齿 */
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  
+  /* 硬件加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}

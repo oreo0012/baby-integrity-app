@@ -1,0 +1,66 @@
+{
+  "addItems": [
+    {
+      "id": "add-1",
+      "name": "积极完成学习任务",
+      "minScore": 1,
+      "maxScore": 3
+    },
+    {
+      "id": "add-2",
+      "name": "取得优秀成绩",
+      "minScore": 2,
+      "maxScore": 4
+    },
+    {
+      "id": "add-3",
+      "name": "老师点名表扬",
+      "minScore": 2,
+      "maxScore": 4
+    },
+    {
+      "id": "add-4",
+      "name": "争当家务小能手",
+      "minScore": 2,
+      "maxScore": 3
+    },
+    {
+      "id": "add-5",
+      "name": "诚信守时",
+      "minScore": 2,
+      "maxScore": 3
+    },
+    {
+      "id": "add-6",
+      "name": "彬彬有礼",
+      "minScore": 1,
+      "maxScore": 2
+    }
+  ],
+  "subtractItems": [
+    {
+      "id": "subtract-1",
+      "name": "拒绝完成学习任务",
+      "minScore": 1,
+      "maxScore": 3
+    },
+    {
+      "id": "subtract-2",
+      "name": "考试考砸了",
+      "minScore": 1,
+      "maxScore": 3
+    },
+    {
+      "id": "subtract-3",
+      "name": "不讲卫生",
+      "minScore": 1,
+      "maxScore": 2
+    },
+    {
+      "id": "subtract-4",
+      "name": "违约拖延",
+      "minScore": 2,
+      "maxScore": 5
+    }
+  ]
+}
