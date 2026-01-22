@@ -10,12 +10,8 @@ import GirlAnimation from './components/GirlAnimation';
 import AppBackground from './components/AppBackground';
 import AnimationOverlay, { type AnimationType } from './components/AnimationOverlay';
 import AnimationPreloader from './components/AnimationPreloader';
-import TestAnimation from './pages/TestAnimation';
-import TestFlowerAnimation from './pages/TestFlowerAnimation';
 
 function App() {
-  const [isTestMode, setIsTestMode] = useState(false);
-  const [isFlowerTestMode, setIsFlowerTestMode] = useState(false);
   const [score, setScore] = useState(100);
   const [maxScore] = useState(100);
   const [isRewardsOpen, setIsRewardsOpen] = useState(false);
@@ -31,10 +27,10 @@ function App() {
     loadScore();
   }, []);
 
-  const loadScore = () => {
-    const currentScore = getCurrentScoreData();
+  const loadScore = async () => {
+    const currentScore = await getCurrentScoreData();
     setScore(currentScore);
-    const currentRewards = getCurrentRewards();
+    const currentRewards = await getCurrentRewards();
     setRewards(currentRewards);
   };
 
@@ -137,36 +133,6 @@ function App() {
   };
 
   const rating = getRatingText();
-
-  // 如果是送花/扣花测试模式，显示测试页面
-  if (isFlowerTestMode) {
-    return (
-      <div className="relative">
-        <button
-          onClick={() => setIsFlowerTestMode(false)}
-          className="fixed top-4 left-4 z-50 bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg shadow-lg"
-        >
-          ← 返回主页
-        </button>
-        <TestFlowerAnimation />
-      </div>
-    );
-  }
-
-  // 如果是测试模式，显示测试页面
-  if (isTestMode) {
-    return (
-      <div className="relative">
-        <button
-          onClick={() => setIsTestMode(false)}
-          className="fixed top-4 left-4 z-50 bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg shadow-lg"
-        >
-          ← 返回主页
-        </button>
-        <TestAnimation />
-      </div>
-    );
-  }
 
   return (
     <AppBackground>

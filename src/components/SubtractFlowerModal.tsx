@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { type ScoreItem, getSubtractItems } from '../lib/data-manager';
 import type { AnimationType } from './AnimationOverlay';
@@ -15,11 +15,20 @@ export function SubtractFlowerModal({
   onPlayAnimation 
 }: SubtractFlowerModalProps) {
   const [isProcessing, setIsProcessing] = useState(false);
+  const [subtractItems, setSubtractItems] = useState<ScoreItem[]>([]);
   const processingRef = useRef(false);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    const loadItems = async () => {
+      const items = await getSubtractItems();
+      setSubtractItems(items);
+    };
+    if (isOpen) {
+      loadItems();
+    }
+  }, [isOpen]);
 
-  const subtractItems = getSubtractItems();
+  if (!isOpen) return null;
 
   const handleReasonClick = (item: ScoreItem) => {
     // 防止重复点击

@@ -1,5 +1,4 @@
 import { X } from 'lucide-react';
-import { Button } from './ui/button';
 import type { Reward } from '../lib/config';
 
 interface RewardsModalProps {

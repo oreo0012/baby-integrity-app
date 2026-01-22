@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 /**
  * 动画预加载组件
  * 在应用启动时预加载所有 Lottie JSON 动画文件
  */
 export default function AnimationPreloader() {
-  const [loaded, setLoaded] = useState(false);
-  const [progress, setProgress] = useState(0);
-
   useEffect(() => {
     const animations = [
       // 常态动画
@@ -30,14 +27,12 @@ export default function AnimationPreloader() {
           .then(response => response.json())
           .then(() => {
             loadedCount++;
-            setProgress(Math.round((loadedCount / animations.length) * 100));
             console.log(`[Preloader] 已加载: ${src} (${loadedCount}/${animations.length})`);
             resolve();
           })
           .catch((error) => {
             console.error(`[Preloader] 加载失败: ${src}`, error);
             loadedCount++;
-            setProgress(Math.round((loadedCount / animations.length) * 100));
             resolve(); // 即使失败也继续
           });
       });
@@ -47,7 +42,6 @@ export default function AnimationPreloader() {
       console.log('[Preloader] 开始预加载 Lottie 动画...');
       await Promise.all(animations.map(preloadJson));
       console.log('[Preloader] 所有 Lottie 动画预加载完成！');
-      setLoaded(true);
     };
 
     preloadAll();
